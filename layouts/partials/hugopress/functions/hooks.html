@@ -1,0 +1,6 @@
+{{- $modules := partialCached "hugopress/functions/modules" "" }}
+{{- $hooks := slice }}
+{{- with index $modules.hooks . }}
+  {{- $hooks = sort . "weight" "desc" }}
+{{ end }}
+{{- return $hooks }}

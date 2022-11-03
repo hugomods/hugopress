@@ -1,0 +1,12 @@
+name = "HugoPress"
+license = "MIT"
+licenselink = "https://github.com/razonyang/hugopress/blob/master/LICENSE"
+description = "Pluggable and UI less Hugo modules framework"
+homepage = "https://hugopress.razonyang.com/"
+tags = []
+features = []
+min_version = "0.97.0"
+
+[author]
+name = "razonyang"
+homepage = "https://razonyang.com"

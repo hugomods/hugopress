@@ -1,0 +1,6 @@
+{{- $name := .Name }}
+{{- $page := .Page }}
+{{- $hook := partialCached "hugopress/functions/hooks" $name $name }}
+{{- range $hook }}
+  {{- partial .partial $page }}
+{{- end }}

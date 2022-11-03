@@ -1,0 +1,12 @@
+{{- $name := .Name }}
+{{- $page := .Page }}
+{{- $hook := partialCached "hugopress/functions/attributes" $name $name }}
+{{- $attributes := dict }}
+{{- range $hook }}
+  {{- $attributes = merge $attributes (partial .partial $page) }}
+{{- end }}
+{{- $tmp := slice }}
+{{- range $name, $value := $attributes }}
+  {{- $tmp = $tmp | append (printf "%s=%q" $name $value) }}
+{{- end }}
+{{- delimit $tmp " " -}}

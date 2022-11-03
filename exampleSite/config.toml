@@ -1,0 +1,12 @@
+baseURL = "https://hugopress.razonyang.com/"
+title = "HugoPress"
+theme = "github.com/razonyang/hugopress"
+
+[params]
+
+[params.hugopress]
+[params.hugopress.modules.hello]
+# disable = true
+[params.hugopress.modules.hello.attributes.document]
+[params.hugopress.modules.hello.hooks.head-end]
+[params.hugopress.modules.hello.hooks.body-begin]

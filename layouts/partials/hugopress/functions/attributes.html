@@ -1,0 +1,6 @@
+{{- $modules := partialCached "hugopress/functions/modules" "" }}
+{{- $attributes := slice }}
+{{- with index $modules.attributes . }}
+  {{- $attributes = sort . }}
+{{ end }}
+{{- return $attributes -}}

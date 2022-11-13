@@ -44,6 +44,7 @@ The `hooks` are used to render HTML of the module in a specific place, such as `
 Modules that support HugoPress.
 
 - [Google Adsense](https://github.com/razonyang/hugo-mod-google-adsense)
+- [Font Awesome SVG JS Module](https://github.com/razonyang/hugo-mod-font-awesome-svg-js)
 - Add modules here via PR.
 
 ## Themes

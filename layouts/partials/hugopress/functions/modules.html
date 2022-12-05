@@ -1,28 +1,13 @@
-{{/* Returns all hooks and attributes. */}}
-{{- $hooks := dict }}
-{{- $attributes := dict }}
-{{- range $moduleName, $module := site.Params.HugoPress.Modules }}
-  {{- if $module.Disable }}
-    {{ continue }}
-  {{- end }}
-  {{- with .Hooks }}
-    {{- range $name, $option := . }}
-      {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/hooks/%s" $moduleName $name)) }}
-      {{- $hook := cond (isset $hooks $name) (index $hooks $name) slice }}
-      {{- $hook = $hook | append $option }}
-      {{- $hooks = merge $hooks (dict $name $hook) }}
+{{- $settings := partialCached "hugopress/functions/settings" "" }}
+{{- $modules := slice }}
+{{- with index $settings.hooks . }}
+  {{- $weighted := sort (where . "weight" "gt" 0) "weight" }}
+  {{- $nonWeighted := slice }}
+  {{- range . }}
+    {{- if not (isset . "weight") }}
+      {{- $nonWeighted = $nonWeighted | append . }}
     {{- end }}
   {{- end }}
-  {{- with .Attributes }}
-    {{- range $name, $option := . }}
-      {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/attributes/%s" $moduleName $name)) }}
-      {{- $attribute := cond (isset $attributes $name) (index $attributes $name) slice }}
-      {{- $attribute = $attribute | append $option }}
-      {{- $attributes = merge $attributes (dict $name $attribute) }}
-    {{- end }}
-  {{- end }}
-{{- end }}
-{{- return dict
-  "hooks" $hooks
-  "attributes" $attributes
-}}
+  {{- $modules = $weighted | append $nonWeighted }}
+{{ end }}
+{{- return $modules }}

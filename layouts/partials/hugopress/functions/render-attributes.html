@@ -1,8 +1,8 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
-{{- $hook := partialCached "hugopress/functions/attributes" $name $name }}
+{{- $modules := partialCached "hugopress/functions/attributes" $name $name }}
 {{- $attributes := dict }}
-{{- range $hook }}
+{{- range $modules }}
   {{- $attributes = merge $attributes (partial .partial $page) }}
 {{- end }}
 {{- $tmp := slice }}

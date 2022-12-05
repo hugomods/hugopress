@@ -39,6 +39,18 @@ The `hooks` are used to render HTML of the module in a specific place, such as `
 | `body-begin` | At the beginning of the `<body>` tag.
 | `body-end` | Before the `<body>` end.
 
+#### Hooks Context
+
+The context (aka the `.`) of hook partial.
+
+| Name | Type | Description
+|---|---
+| `Total` | Number | The number of modules in the current hook.
+| `Index` | Number | The index number of current module.
+| `HasPrev` | Boolean | Whether there are modules(s) before the current.
+| `HasNext` | Boolean | Whether there are modules(s) after the current.
+| `Page` | [Page](https://gohugo.io/variables/page/) | Current page.
+
 ## Modules
 
 Modules that support HugoPress.
@@ -129,9 +141,9 @@ disable = true
 
 #### Hooks Weight
 
-High weight gets higher precedence.
+Lower weight gets higher precedence.
 
 ```toml
 [params.hugopress.modules.hello.hooks.body-begin]
-weight = 100
+weight = 1
 ```

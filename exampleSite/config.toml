@@ -6,7 +6,15 @@ theme = "github.com/razonyang/hugopress"
 
 [params.hugopress]
 [params.hugopress.modules.hello]
-# disable = true
 [params.hugopress.modules.hello.attributes.document]
+[params.hugopress.modules.hello.attributes.body]
 [params.hugopress.modules.hello.hooks.head-end]
 [params.hugopress.modules.hello.hooks.body-begin]
+weight = 3
+
+[params.hugopress.modules.foo]
+[params.hugopress.modules.foo.attributes.document]
+[params.hugopress.modules.foo.attributes.body]
+[params.hugopress.modules.foo.hooks.head-end]
+[params.hugopress.modules.foo.hooks.body-begin]
+#weight = 1

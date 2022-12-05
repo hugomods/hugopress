@@ -1,6 +1,16 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
-{{- $hook := partialCached "hugopress/functions/hooks" $name $name }}
-{{- range $hook }}
-  {{- partial .partial $page }}
+{{- $modules := partialCached "hugopress/functions/modules" $name $name }}
+{{- $idx := 0 }}
+{{- $total := len $modules }}
+{{- range $modules }}
+  {{- $ctx := dict
+    "HasPrev" (ne $idx 0)
+    "HasNext" (lt $idx (sub $total 1))
+    "Index" $idx
+    "Page" $page
+    "Total" $total
+  }}
+  {{- partial .partial $ctx }}
+  {{- $idx = add $idx 1 }}
 {{- end }}

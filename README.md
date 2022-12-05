@@ -22,11 +22,19 @@ The attributes partial should return key-value pairs.
 
 ```html
 {{- return dict
-  "lang" .Lang
+  "lang" .Page.Lang
   "data-foo" "bar"
   "data-hello" "world"
 }}
 ```
+
+#### Attributes Context
+
+The context (aka the `.`) of attributes' partial.
+
+| Name | Type | Description
+|---|---
+| `Page` | [Page](https://gohugo.io/variables/page/) | Current page.
 
 ### Hooks
 

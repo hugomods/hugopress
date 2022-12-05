@@ -1,0 +1,17 @@
+{
+  "name": "HugoPress",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razonyang/hugopress.git"
+  },
+  "author": "razonyang <razonyang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razonyang/hugopress/issues"
+  },
+  "homepage": "https://github.com/razonyang/hugopress#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13"
+  }
+}

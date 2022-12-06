@@ -33,7 +33,7 @@ The attributes partial should return key-value pairs.
 The context (aka the `.`) of attributes' partial.
 
 | Name | Type | Description
-|---|---
+|---|---|---
 | `Page` | [Page](https://gohugo.io/variables/page/) | Current page.
 
 ### Hooks
@@ -52,7 +52,7 @@ The `hooks` are used to render HTML of the module in a specific place, such as `
 The context (aka the `.`) of hook partial.
 
 | Name | Type | Description
-|---|---
+|---|---|---
 | `Total` | Number | The number of modules in the current hook.
 | `Index` | Number | The index number of current module.
 | `HasPrev` | Boolean | Whether there are modules(s) before the current.

@@ -155,3 +155,9 @@ Lower weight gets higher precedence.
 [params.hugopress.modules.hello.hooks.body-begin]
 weight = 1
 ```
+
+## Functions
+
+| Name | Description
+|---|---
+| `{{ partial "hugopress/functions/has-modules" $hookName }}` | Indicate if there are modules associate to the specified hook.

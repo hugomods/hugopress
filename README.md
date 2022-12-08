@@ -144,7 +144,7 @@ The module files should be placed under the `layouts/partials/hugopress/modules`
 
 ```toml
 [params.hugopress.modules.hello]
-disable = true
+disabled = true
 ```
 
 #### Hooks Weight

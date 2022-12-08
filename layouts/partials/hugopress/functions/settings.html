@@ -2,7 +2,7 @@
 {{- $hooks := newScratch }}
 {{- $attributes := newScratch }}
 {{- range $moduleName, $module := site.Params.HugoPress.Modules }}
-  {{- if $module.Disable }}
+  {{- if $module.Disabled }}
     {{ continue }}
   {{- end }}
   {{- with .Hooks }}

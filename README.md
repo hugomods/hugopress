@@ -161,3 +161,5 @@ weight = 1
 | Name | Description
 |---|---
 | `{{ partial "hugopress/functions/has-modules" $hookName }}` | Indicate if there are modules associate to the specified hook.
+| `{{ partial "hugopress/functions/exists" $moduleName }}` | Indicate whether the module exists.
+| `{{ partial "hugopress/functions/is-disabled" $moduleName }}` | Indicate whether the module was disabled, `false` if module doesn't exist.

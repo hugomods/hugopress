@@ -18,3 +18,11 @@ weight = 3
 [params.hugopress.modules.foo.hooks.head-end]
 [params.hugopress.modules.foo.hooks.body-begin]
 #weight = 1
+
+[params.hugopress.modules.disabled]
+disabled = true
+[params.hugopress.modules.disabled.attributes.document]
+[params.hugopress.modules.disabled.attributes.body]
+[params.hugopress.modules.disabled.hooks.head-end]
+[params.hugopress.modules.disabled.hooks.body-begin]
+#weight = 1

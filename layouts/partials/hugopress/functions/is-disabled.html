@@ -1,0 +1,9 @@
+{{/* Check whether the module is disabeld. */}}
+{{/* False will be returned if the module does not exist. */}}
+{{- $disabled := false -}}
+{{- with index site.Params.HugoPress.Modules . }}
+  {{- if isset . "disabled" }}
+    {{- $disabled = .disabled }}
+  {{- end }}
+{{- end -}}
+{{- return $disabled -}}

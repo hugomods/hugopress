@@ -1,0 +1,2 @@
+[module.imports]
+path = "github.com/razonyang/hugo-mod-base"

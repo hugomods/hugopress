@@ -77,15 +77,18 @@ Themes that support HugoPress.
 
 ### Create a HugoPress Theme
 
-Modify the `layouts/_default/baseof.html` as following, and then override the `theme` blocks and the `layouts/partials/head.html` with your own.
+Just use the built-in [`baseof.html`](https://github.com/razonyang/hugopress/blob/main/layouts/_default/baseof.html) partial.
 
-```html
+Or modify it as following for getting much more flexible, and then override the `theme` blocks.
+
+```go
+{{/* layouts/_default/baseof.html */}}
 <!DOCTYPE html>
 <html {{ partial "hugopress/document-attributes" . | safeHTMLAttr -}}>
   <head>
     {{- partial "hugopress/head-begin.html" . }}
     {{/* Theme head block begin. */}}
-    <title>{{- block "title" . -}}{{ printf "%s | %s" .Title .Site.Title }}{{- end -}}</title>
+    <title>{{- block "title" . -}}{{ partial "base/title" }}{{- end -}}</title>
     {{/* Theme head block end. */}}
     {{- partial "hugopress/head-end.html" . }}
   </head>

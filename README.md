@@ -63,6 +63,7 @@ The context (aka the `.`) of hook partial.
 
 Modules that support HugoPress.
 
+- [SEO Module](https://github.com/razonyang/hugo-mod-seo)
 - [Google Adsense](https://github.com/razonyang/hugo-mod-google-adsense)
 - [Font Awesome SVG JS Module](https://github.com/razonyang/hugo-mod-font-awesome-svg-js)
 - Add modules here via PR.

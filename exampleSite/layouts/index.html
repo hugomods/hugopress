@@ -1,18 +1,29 @@
 {{ define "main" }}
-<h2>Function has-modules</h2>
-<p>head-begin: {{ partial "hugopress/functions/has-modules" "head-begin" }}</p>
-<p>head-end: {{ partial "hugopress/functions/has-modules" "head-end" }}</p>
-<p>body-begin: {{ partial "hugopress/functions/has-modules" "body-begin" }}</p>
-<p>body-end: {{ partial "hugopress/functions/has-modules" "body-end" }}</p>
+  <h2>Function has-modules</h2>
+  <p>
+    head-begin: {{ partial "hugopress/functions/has-modules" "head-begin" }}
+  </p>
+  <p>head-end: {{ partial "hugopress/functions/has-modules" "head-end" }}</p>
+  <p>
+    body-begin: {{ partial "hugopress/functions/has-modules" "body-begin" }}
+  </p>
+  <p>body-end: {{ partial "hugopress/functions/has-modules" "body-end" }}</p>
 
-<h2>Function exist</h2>
-<p>foo: {{ partial "hugopress/functions/exists" "foo" }}</p>
-<p>hello: {{ partial "hugopress/functions/exists" "hello" }}</p>
-<p>non-existence: {{ partial "hugopress/functions/exists" "non-existence" }}</p>
+  <h2>Function exists</h2>
+  <p>foo: {{ partial "hugopress/functions/exists" "foo" }}</p>
+  <p>hello: {{ partial "hugopress/functions/exists" "hello" }}</p>
+  <p>
+    non-existence: {{ partial "hugopress/functions/exists" "non-existence" }}
+  </p>
 
-<h2>Function is-disabled</h2>
-<p>foo: {{ partial "hugopress/functions/is-disabled" "foo" }}</p>
-<p>hello: {{ partial "hugopress/functions/is-disabled" "hello" }}</p>
-<p>disabled-module: {{ partial "hugopress/functions/is-disabled" "disabled" }}</p>
-<p>non-existence: {{ partial "hugopress/functions/is-disabled" "non-existence" }}</p>
+  <h2>Function is-disabled</h2>
+  <p>foo: {{ partial "hugopress/functions/is-disabled" "foo" }}</p>
+  <p>hello: {{ partial "hugopress/functions/is-disabled" "hello" }}</p>
+  <p>
+    disabled-module: {{ partial "hugopress/functions/is-disabled" "disabled" }}
+  </p>
+  <p>
+    non-existence:
+    {{ partial "hugopress/functions/is-disabled" "non-existence" }}
+  </p>
 {{ end }}

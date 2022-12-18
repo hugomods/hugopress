@@ -78,9 +78,7 @@ Themes that support HugoPress.
 
 ### Create a HugoPress Theme
 
-Just use the built-in [`baseof.html`](https://github.com/razonyang/hugopress/blob/main/layouts/_default/baseof.html) partial.
-
-Or modify it as following for getting much more flexible, and then override the `theme` blocks.
+Modify your `baseof.html` as following for getting much more flexible, and then override the `theme` blocks.
 
 ```go
 {{/* layouts/_default/baseof.html */}}

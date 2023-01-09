@@ -19,6 +19,12 @@ weight = 3
 [params.hugopress.modules.foo.hooks.body-begin]
 #weight = 1
 
+[params.hugopress.modules.bar]
+[params.hugopress.modules.bar.attributes.body]
+disabled = true
+[params.hugopress.modules.bar.hooks.body-begin]
+disabled = true
+
 [params.hugopress.modules.disabled]
 disabled = true
 [params.hugopress.modules.disabled.attributes.document]

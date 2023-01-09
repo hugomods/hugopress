@@ -7,12 +7,18 @@
   {{- end }}
   {{- with .Hooks }}
     {{- range $name, $option := . }}
+      {{- if $option.disabled }}
+        {{- continue }}
+      {{- end }}
       {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/hooks/%s" $moduleName $name)) }}
       {{- $hooks.Add $name (slice $option) }}
     {{- end }}
   {{- end }}
   {{- with .Attributes }}
     {{- range $name, $option := . }}
+      {{- if $option.disabled }}
+        {{- continue }}
+      {{- end }}
       {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/attributes/%s" $moduleName $name)) }}
       {{- $attributes.Add $name (slice $option) }}
     {{- end }}

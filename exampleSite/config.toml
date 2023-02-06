@@ -14,9 +14,13 @@ weight = 3
 
 [params.hugopress.modules.foo]
 [params.hugopress.modules.foo.attributes.document]
+cacheable = true
 [params.hugopress.modules.foo.attributes.body]
+cacheable = true
 [params.hugopress.modules.foo.hooks.head-end]
+cacheable = true
 [params.hugopress.modules.foo.hooks.body-begin]
+cacheable = true
 #weight = 1
 
 [params.hugopress.modules.bar]

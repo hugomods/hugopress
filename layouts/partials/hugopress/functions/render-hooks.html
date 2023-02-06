@@ -11,6 +11,10 @@
     "Page" $page
     "Total" $total
   }}
-  {{- partial .partial $ctx }}
+  {{- if .cacheable }}
+    {{- partialCached .partial $ctx }}
+  {{- else }}
+    {{- partial .partial $ctx }}
+  {{- end }}
   {{- $idx = add $idx 1 }}
 {{- end }}

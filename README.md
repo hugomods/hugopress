@@ -28,6 +28,12 @@ The attributes partial should return key-value pairs.
 }}
 ```
 
+#### Attributes Parameters
+
+| Name | Type | Default | Description
+|---|:-:|:-:|---
+| `cacheable` | Boolean | `false` | Whether to cache the attributes.
+
 #### Attributes Context
 
 The context (aka the `.`) of attributes' partial.
@@ -46,6 +52,12 @@ The `hooks` are used to render HTML of the module in a specific place, such as `
 | `head-end` | Before the `<head>` end.
 | `body-begin` | At the beginning of the `<body>` tag.
 | `body-end` | Before the `<body>` end.
+
+#### Hooks Parameters
+
+| Name | Type | Default | Description
+|---|:-:|:-:|---
+| `cacheable` | Boolean | `false` | Whether to cache the hooks.
 
 #### Hooks Context
 
@@ -147,6 +159,16 @@ The module files should be placed under the `layouts/partials/hugopress/modules`
 ```toml
 [params.hugopress.modules.hello]
 disabled = true
+```
+
+#### Cacheable Attributes and Hooks
+
+```toml
+[params.hugopress.modules.hello.attributes.document]
+cacheable = true
+
+[params.hugopress.modules.hello.hooks.body-begin]
+cacheable = true
 ```
 
 #### Hooks Weight

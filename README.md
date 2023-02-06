@@ -2,6 +2,11 @@
     <img src="logo.png">
 </p>
 
+[![Used By](https://img.shields.io/badge/dynamic/json?color=success&label=used+by&query=repositories_humanize&logo=hugo&style=flat-square&url=https://api.razonyang.com/v1/github/dependents/razonyang/hugopress)](https://github.com/razonyang/hugopress/network/dependents)
+![Hugo Requirements](https://img.shields.io/badge/dynamic/json?color=important&label=requirements&query=requirements&logo=hugo&style=flat-square&url=https://api.razonyang.com/v1/hugo/modules/github.com/razonyang/hugopress)
+[![License](https://img.shields.io/github/license/razonyang/hugopress?style=flat-square)](https://github.com/razonyang/hugopress/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/tag/razonyang/hugopress?label=version&style=flat-square)](https://github.com/razonyang/hugopress/tags)
+
 Pluggable and UI less [Hugo](https://gohugo.io/) modules framework, which defines several functions and partials to load and render Hugo modules automatically.
 The main advantage is that once the theme support HugoPress, their users have the ability to install the modules without requesting new features to the theme.
 

@@ -1,0 +1,2 @@
+{{- $settings := partialCached "hugopress/functions/settings" "" }}
+{{- return isset $settings.hooks . -}}

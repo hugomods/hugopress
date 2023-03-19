@@ -1,0 +1,18 @@
+{{- $name := .Name }}
+{{- $page := .Page }}
+{{- $modules := partialCached "hugopress/functions/attributes" $name $name }}
+{{- $attributes := dict }}
+{{- range $modules }}
+  {{- $attrs := slice }}
+  {{- if .cacheable }}
+    {{- $attrs = partialCached .partial (dict "Page" $page) }}
+  {{- else }}
+    {{- $attrs = partial .partial (dict "Page" $page) }}
+  {{- end }}
+  {{- $attributes = merge $attributes $attrs }}
+{{- end }}
+{{- $tmp := slice }}
+{{- range $name, $value := $attributes }}
+  {{- $tmp = $tmp | append (printf `%s="%s"` $name $value) }}
+{{- end }}
+{{- delimit $tmp " " -}}

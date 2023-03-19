@@ -1,0 +1,13 @@
+{{- $settings := partialCached "hugopress/functions/settings" "" }}
+{{- $modules := slice }}
+{{- with index $settings.hooks . }}
+  {{- $weighted := sort (where . "weight" "gt" 0) "weight" }}
+  {{- $nonWeighted := slice }}
+  {{- range . }}
+    {{- if not (isset . "weight") }}
+      {{- $nonWeighted = $nonWeighted | append . }}
+    {{- end }}
+  {{- end }}
+  {{- $modules = $weighted | append $nonWeighted }}
+{{ end }}
+{{- return $modules }}

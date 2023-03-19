@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html {{ partial "hugopress/document-attributes" . | safeHTMLAttr -}}>
+  <head>
+    {{- partial "hugopress/head-begin.html" . }}
+    {{/* Theme head begin. */}}
+    <title>
+      {{- block "title" . -}}{{ partial "base/title" . }}{{- end -}}
+    </title>
+    {{/* Theme head end. */}}
+    {{- partial "hugopress/head-end.html" . }}
+  </head>
+  <body {{ partial "hugopress/body-attributes" . | safeHTMLAttr -}}>
+    {{- partial "hugopress/body-begin.html" . }}
+    {{/* UI block begin. */}}
+    {{- block "main" . }}{{- end }}
+    {{/* UI block end. */}}
+    {{- partial "hugopress/body-end.html" . }}
+  </body>
+</html>

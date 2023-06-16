@@ -10,6 +10,8 @@ path = "github.com/hugomods/hugopress"
 [params]
 
 [params.hugopress]
+debug = true
+
 [params.hugopress.modules.hello]
 [params.hugopress.modules.hello.attributes.document]
 [params.hugopress.modules.hello.attributes.body]

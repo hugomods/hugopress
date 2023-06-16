@@ -15,6 +15,9 @@
     {{- warnf "[hugopress] [%s] hook does't exist: layouts/partials/%s.html" .module .partial }}
     {{- continue }}
   {{- end }}
+  {{- if site.Params.hugopress.debug }}
+    {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}
+  {{- end }}
   {{- if .cacheable }}
     {{- partialCached .partial $ctx }}
   {{- else }}

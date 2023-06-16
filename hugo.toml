@@ -1,2 +1,5 @@
 [module.hugoVersion]
 min = "0.110.0"
+
+[params.hugopress]
+debug = false

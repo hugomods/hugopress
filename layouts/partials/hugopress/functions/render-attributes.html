@@ -8,6 +8,9 @@
     {{- warnf "[hugopress] [%s] attribute does't exist: layouts/partials/%s.html" .module .partial }}
     {{- continue }}
   {{- end }}
+  {{- if site.Params.hugopress.debug }}
+    {{- warnf "[hugopress] [%s] rendering attribute: %q." .module .name }}
+  {{- end }}
   {{- if .cacheable }}
     {{- $attrs = partialCached .partial (dict "Page" $page) }}
   {{- else }}

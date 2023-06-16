@@ -30,12 +30,12 @@ cacheable = true
 
 [params.hugopress.modules.bar]
 [params.hugopress.modules.bar.attributes.body]
-disabled = true
+disable = true
 [params.hugopress.modules.bar.hooks.body-begin]
-disabled = true
+disable = true
 
 [params.hugopress.modules.disabled]
-disabled = true
+disable = true
 [params.hugopress.modules.disabled.attributes.document]
 [params.hugopress.modules.disabled.attributes.body]
 [params.hugopress.modules.disabled.hooks.head-end]

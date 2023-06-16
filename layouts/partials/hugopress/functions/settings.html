@@ -2,12 +2,12 @@
 {{- $hooks := newScratch }}
 {{- $attributes := newScratch }}
 {{- range $moduleName, $module := site.Params.HugoPress.Modules }}
-  {{- if $module.Disabled }}
+  {{- if or $module.disable $module.disabled }}
     {{ continue }}
   {{- end }}
   {{- with .Hooks }}
     {{- range $name, $option := . }}
-      {{- if $option.disabled }}
+      {{- if or $option.disable $option.disabled }}
         {{- continue }}
       {{- end }}
       {{- $option = merge $option (dict
@@ -19,7 +19,7 @@
   {{- end }}
   {{- with .Attributes }}
     {{- range $name, $option := . }}
-      {{- if $option.disabled }}
+      {{- if or $option.disable $option.disabled }}
         {{- continue }}
       {{- end }}
       {{- $option = merge $option (dict

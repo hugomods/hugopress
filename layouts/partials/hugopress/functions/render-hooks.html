@@ -11,6 +11,10 @@
     "Page" $page
     "Total" $total
   }}
+  {{- if not (partialCached "hugopress/functions/partial-exists" .partial .partial) }}
+    {{- warnf "[hugopress] [%s] hook does't exist: layouts/partials/%s.html" .module .partial }}
+    {{- continue }}
+  {{- end }}
   {{- if .cacheable }}
     {{- partialCached .partial $ctx }}
   {{- else }}

@@ -4,6 +4,10 @@
 {{- $attributes := dict }}
 {{- range $modules }}
   {{- $attrs := slice }}
+  {{- if not (partialCached "hugopress/functions/partial-exists" .partial .partial) }}
+    {{- warnf "[hugopress] [%s] attribute does't exist: layouts/partials/%s.html" .module .partial }}
+    {{- continue }}
+  {{- end }}
   {{- if .cacheable }}
     {{- $attrs = partialCached .partial (dict "Page" $page) }}
   {{- else }}

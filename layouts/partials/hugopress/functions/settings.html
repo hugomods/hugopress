@@ -10,7 +10,10 @@
       {{- if $option.disabled }}
         {{- continue }}
       {{- end }}
-      {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/hooks/%s" $moduleName $name)) }}
+      {{- $option = merge $option (dict
+        "module" $moduleName
+        "partial" (printf "hugopress/modules/%s/hooks/%s" $moduleName $name))
+      }}
       {{- $hooks.Add $name (slice $option) }}
     {{- end }}
   {{- end }}
@@ -19,7 +22,10 @@
       {{- if $option.disabled }}
         {{- continue }}
       {{- end }}
-      {{- $option = merge $option (dict "partial" (printf "hugopress/modules/%s/attributes/%s" $moduleName $name)) }}
+      {{- $option = merge $option (dict
+        "module" $moduleName
+        "partial" (printf "hugopress/modules/%s/attributes/%s" $moduleName $name))
+      }}
       {{- $attributes.Add $name (slice $option) }}
     {{- end }}
   {{- end }}

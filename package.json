@@ -12,6 +12,6 @@
   "homepage": "https://github.com/hugomods/hugopress#readme",
   "devDependencies": {
     "prettier": "^3.0.0",
-    "prettier-plugin-go-template": "^0.0.13"
+    "prettier-plugin-go-template": "^0.0.15"
   }
 }

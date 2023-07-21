@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/hugomods/hugopress/compare/v0.2.0...v0.2.1) (2023-07-21)
+
+
+### Performance Improvements ⚡️
+
+* avoid checking the partials each time render the hooks and attributes ([f814b91](https://github.com/hugomods/hugopress/commit/f814b91b7e0ea30575e73992e97758266370acc2))
+
 ## [0.2.0](https://github.com/hugomods/hugopress/compare/v0.1.0...v0.2.0) (2023-06-16)
 
 

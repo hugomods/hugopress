@@ -16,10 +16,15 @@
         {{- end }}
         {{- continue }}
       {{- end }}
+      {{- $partial := printf "hugopress/modules/%s/hooks/%s" $moduleName $name }}
+      {{- if not (partialCached "hugopress/functions/partial-exists" $partial $partial) }}
+        {{- warnf "[hugopress] [%s] hook does't exist: layouts/partials/%s.html" $moduleName $partial }}
+        {{- continue }}
+      {{- end }}
       {{- $option = merge $option (dict
         "name" $name
         "module" $moduleName
-        "partial" (printf "hugopress/modules/%s/hooks/%s" $moduleName $name))
+        "partial" $partial)
       }}
       {{- $hooks.Add $name (slice $option) }}
     {{- end }}
@@ -32,10 +37,15 @@
         {{- end }}
         {{- continue }}
       {{- end }}
+      {{- $partial := printf "hugopress/modules/%s/attributes/%s" $moduleName $name }}
+      {{- if not (partialCached "hugopress/functions/partial-exists" $partial $partial) }}
+        {{- warnf "[hugopress] [%s] attribute does't exist: layouts/partials/%s.html" $moduleName $partial }}
+        {{- continue }}
+      {{- end }}
       {{- $option = merge $option (dict
         "name" $name
         "module" $moduleName
-        "partial" (printf "hugopress/modules/%s/attributes/%s" $moduleName $name))
+        "partial" $partial)
       }}
       {{- $attributes.Add $name (slice $option) }}
     {{- end }}

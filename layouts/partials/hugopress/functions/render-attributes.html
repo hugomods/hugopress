@@ -4,17 +4,14 @@
 {{- $attributes := dict }}
 {{- range $modules }}
   {{- $attrs := slice }}
-  {{- if not (partialCached "hugopress/functions/partial-exists" .partial .partial) }}
-    {{- warnf "[hugopress] [%s] attribute does't exist: layouts/partials/%s.html" .module .partial }}
-    {{- continue }}
-  {{- end }}
   {{- if site.Params.hugopress.debug }}
     {{- warnf "[hugopress] [%s] rendering attribute: %q." .module .name }}
   {{- end }}
+  {{- $ctx := dict "Page" $page }}
   {{- if .cacheable }}
-    {{- $attrs = partialCached .partial (dict "Page" $page) }}
+    {{- $attrs = partialCached .partial $ctx }}
   {{- else }}
-    {{- $attrs = partial .partial (dict "Page" $page) }}
+    {{- $attrs = partial .partial $ctx }}
   {{- end }}
   {{- $attributes = merge $attributes $attrs }}
 {{- end }}

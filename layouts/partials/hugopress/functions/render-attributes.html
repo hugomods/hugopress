@@ -19,4 +19,4 @@
 {{- range $name, $value := $attributes }}
   {{- $tmp = $tmp | append (printf `%s="%s"` $name $value) }}
 {{- end }}
-{{- delimit $tmp " " -}}
+{{- delimit $tmp " " | safeHTML -}}

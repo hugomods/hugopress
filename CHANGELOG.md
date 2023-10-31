@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/hugomods/hugopress/compare/v0.2.1...v0.2.2) (2023-10-31)
+
+
+### Bug Fixes 🐞
+
+* adjust to accommodate Hugo v0.120.0 changes ([#36](https://github.com/hugomods/hugopress/issues/36)) ([16af083](https://github.com/hugomods/hugopress/commit/16af0830717f27d8785748081c8c61551d76b764))
+
 ## [0.2.1](https://github.com/hugomods/hugopress/compare/v0.2.0...v0.2.1) (2023-07-21)
 
 

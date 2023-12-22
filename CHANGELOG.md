@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/hugomods/hugopress/compare/v0.2.2...v0.2.3) (2023-12-22)
+
+
+### Bug Fixes 🐞
+
+* appending instead overriding attribute values ([#41](https://github.com/hugomods/hugopress/issues/41)) ([89f34c4](https://github.com/hugomods/hugopress/commit/89f34c471af4b149f65980a67472b8935dbd3c94))
+
 ## [0.2.2](https://github.com/hugomods/hugopress/compare/v0.2.1...v0.2.2) (2023-10-31)
 
 

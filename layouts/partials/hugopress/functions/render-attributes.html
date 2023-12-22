@@ -1,7 +1,7 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
 {{- $modules := partialCached "hugopress/functions/attributes" $name $name }}
-{{- $attributes := dict }}
+{{- $attributes := newScratch }}
 {{- range $modules }}
   {{- $attrs := slice }}
   {{- if site.Params.hugopress.debug }}
@@ -13,10 +13,18 @@
   {{- else }}
     {{- $attrs = partial .partial $ctx }}
   {{- end }}
-  {{- $attributes = merge $attributes $attrs }}
+  {{- range $name, $value := $attrs }}
+    {{- if not ($attributes.Get $name) }}
+      {{/* set name value directly if not exists. */}}
+      {{- $attributes.Set $name $value }}
+    {{- else }}
+      {{/* append the new value for the corresponding name. */}}
+      {{- printf " %s" $value | $attributes.Add $name }}
+    {{- end }}
+  {{- end }}
 {{- end }}
 {{- $tmp := slice }}
-{{- range $name, $value := $attributes }}
+{{- range $name, $value := $attributes.Values }}
   {{- $tmp = $tmp | append (printf `%s="%s"` $name $value) }}
 {{- end }}
 {{- delimit $tmp " " | safeHTML -}}

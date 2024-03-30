@@ -10,4 +10,4 @@
 Pluggable and UI less [Hugo](https://gohugo.io/) modules framework, which defines several functions and partials to load and render Hugo modules automatically.
 The main advantage is that once the theme support HugoPress, their users have the ability to install the modules without requesting new features to the theme.
 
-See the [documentations](https://hugomods.com/en/docs/hugopress/) for details.
+See the [documentation](https://hugomods.com/en/docs/hugopress/) for details.

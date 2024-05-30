@@ -15,7 +15,11 @@
     {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}
   {{- end }}
   {{- if .cacheable }}
-    {{- partialCached .partial $ctx }}
+    {{- if ne .cache_param_key "" }}
+      {{- partialCached .partial $ctx (index $page.Params .cache_param_key) }}
+    {{- else }}
+      {{- partialCached .partial $ctx }}
+    {{- end }}
   {{- else }}
     {{- partial .partial $ctx }}
   {{- end }}

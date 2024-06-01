@@ -26,6 +26,13 @@
         "module" $moduleName
         "partial" $partial)
       }}
+      {{/* Transform cache keys only once. */}}
+      {{- range slice "cache_param_key" "cache_site_param_key" }}
+        {{- $cacheKey := . }}
+        {{- with index $option $cacheKey }}
+          {{- $option = merge $option (dict $cacheKey (split . ".")) }}
+        {{- end }}
+      {{- end }}
       {{- $hooks.Add $name (slice $option) }}
     {{- end }}
   {{- end }}

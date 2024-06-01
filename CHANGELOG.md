@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/hugomods/hugopress/compare/v0.3.0...v0.4.0) (2024-06-01)
+
+
+### Features ✨
+
+* add the cache_site_param_key to cache partial against site parameter ([#53](https://github.com/hugomods/hugopress/issues/53)) ([e12cdbc](https://github.com/hugomods/hugopress/commit/e12cdbceea6ca4652177aa08d9d68743641739d0))
+
 ## [0.3.0](https://github.com/hugomods/hugopress/compare/v0.2.3...v0.3.0) (2024-06-01)
 
 

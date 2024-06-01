@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/hugomods/hugopress/compare/v0.2.3...v0.3.0) (2024-06-01)
+
+
+### Features ✨
+
+* add the cache_key parameter ([c92d66a](https://github.com/hugomods/hugopress/commit/c92d66a19c0eae2c221cfd9cfb9b82be97b453ab))
+* add the cache_param_key parameter to cache partials by page params ([#50](https://github.com/hugomods/hugopress/issues/50)) ([fc51904](https://github.com/hugomods/hugopress/commit/fc51904b8082c38c9de6def196bbf5c32c4c9c60))
+
 ## [0.2.3](https://github.com/hugomods/hugopress/compare/v0.2.2...v0.2.3) (2023-12-22)
 
 

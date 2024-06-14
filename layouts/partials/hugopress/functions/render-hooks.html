@@ -1,15 +1,14 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
 {{- $modules := partialCached "hugopress/functions/modules" $name $name }}
-{{- $ctx := dict
-  "Page" $page
-  "Total" len $modules
-}}
+{{- $total := len $modules }}
 {{- range $modules }}
-  {{- $ctx = merge $ctx (dict
+  {{- $ctx := dict
+    "Page" $page
+    "Total" $total
     "HasPrev" ._hasPrev
     "HasNext" ._hasNext
-    "Index" ._index)
+    "Index" ._index
   }}
   {{- if site.Params.hugopress.debug }}
     {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}

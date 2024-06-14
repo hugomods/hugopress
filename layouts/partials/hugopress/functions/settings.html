@@ -16,7 +16,14 @@
         {{- end }}
         {{- continue }}
       {{- end }}
-      {{- $partial := printf "hugopress/modules/%s/hooks/%s" $moduleName $name }}
+      {{- $partial := default "" .partial }}
+      {{/* $direct indicates whether to include partial with page variable. */}}
+      {{- $direct := false }}
+      {{- if eq $partial "" }}
+        {{- $partial = printf "hugopress/modules/%s/hooks/%s" $moduleName $name }}
+      {{- else }}
+        {{- $direct = true }}
+      {{- end }}
       {{- if not (partialCached "hugopress/functions/partial-exists" $partial $partial) }}
         {{- warnf "[hugopress] [%s] hook does't exist: layouts/partials/%s.html" $moduleName $partial }}
         {{- continue }}
@@ -24,7 +31,8 @@
       {{- $option = merge $option (dict
         "name" $name
         "module" $moduleName
-        "partial" $partial)
+        "partial" $partial
+        "direct" $direct)
       }}
       {{/* Transform cache keys only once. */}}
       {{- range slice "cache_param_key" "cache_site_param_key" }}

@@ -8,6 +8,14 @@
       {{- $nonWeighted = $nonWeighted | append . }}
     {{- end }}
   {{- end }}
-  {{- $modules = $weighted | append $nonWeighted }}
+  {{- $total := len . }}
+  {{- range $i, $mod := $weighted | append $nonWeighted }}
+    {{- $mod = merge $mod (dict
+      "_index" $i
+      "_hasPrev" (ne $i 0)
+      "_hasNext" (lt $i (sub $total 1)))
+    }}
+    {{- $modules = $modules | append $mod }}
+  {{- end }}
 {{ end }}
 {{- return $modules }}

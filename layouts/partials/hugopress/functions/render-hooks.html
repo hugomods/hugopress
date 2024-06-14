@@ -1,15 +1,14 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
 {{- $modules := partialCached "hugopress/functions/modules" $name $name }}
-{{- $idx := 0 }}
 {{- $total := len $modules }}
 {{- range $modules }}
   {{- $ctx := dict
-    "HasPrev" (ne $idx 0)
-    "HasNext" (lt $idx (sub $total 1))
-    "Index" $idx
     "Page" $page
     "Total" $total
+    "HasPrev" ._hasPrev
+    "HasNext" ._hasNext
+    "Index" ._index
   }}
   {{- if site.Params.hugopress.debug }}
     {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}
@@ -27,5 +26,4 @@
   {{- else }}
     {{- partial .partial $ctx }}
   {{- end }}
-  {{- $idx = add $idx 1 }}
 {{- end }}

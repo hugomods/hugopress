@@ -1,0 +1,6 @@
+{{ $modules := partialCached "hugopress/functions/modules" . . }}
+{{ $res := resources.Get "hugomods/hugopress/hooks-template.html" }}
+{{ $tmplName := printf "hugopress-hooks-%s" . }}
+{{ $res = $res | resources.ExecuteAsTemplate $tmplName $modules }}
+{{ $tmpl := trim $res.Content "\n" }}
+{{ return (resources.FromString $tmplName $tmpl) }}

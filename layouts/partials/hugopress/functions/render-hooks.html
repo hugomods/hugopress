@@ -1,31 +1,5 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
-{{- $modules := partialCached "hugopress/functions/modules" $name $name }}
-{{- $idx := 0 }}
-{{- $total := len $modules }}
-{{- range $modules }}
-  {{- $ctx := dict
-    "HasPrev" (ne $idx 0)
-    "HasNext" (lt $idx (sub $total 1))
-    "Index" $idx
-    "Page" $page
-    "Total" $total
-  }}
-  {{- if site.Params.hugopress.debug }}
-    {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}
-  {{- end }}
-  {{- if .cacheable }}
-    {{- if ne .cache_key nil }}
-      {{- partialCached .partial $ctx (index (apply (slice 0) .cache_key) 0) }}
-    {{- else if ne .cache_param_key nil }}
-      {{- partialCached .partial $ctx (index $page.Params .cache_param_key) }}
-    {{- else if ne .cache_site_param_key nil }}
-      {{- partialCached .partial $ctx (index site.Params .cache_site_param_key) }}
-    {{- else }}
-      {{- partialCached .partial $ctx }}
-    {{- end }}
-  {{- else }}
-    {{- partial .partial $ctx }}
-  {{- end }}
-  {{- $idx = add $idx 1 }}
-{{- end }}
+{{- $tmpl := partialCached "hugopress/functions/hooks-template" $name $name }}
+{{- $html := resources.ExecuteAsTemplate (printf "hugopress-hooks-tmpl-%s-%s" .Name now) (dict "Page" .Page) $tmpl }}
+{{- $html.Content | safeHTML }}

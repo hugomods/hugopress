@@ -1,0 +1,12 @@
+{{- $tmpl := `` }}
+{{- $total := len . }}
+{{- range $i, $mod := . }}
+  {{- $p := os.ReadFile (printf  "layouts/partials/%s.html" .partial) }}
+  {{- $p = replace $p ".Index" $i }}
+  {{- $p = replace $p ".Total" $total }}
+  {{- $p = replace $p ".HasPrev" (cond (ne $  0) "true" "false") }}
+  {{- $p = replace $p ".HasNext" (cond (lt $  (sub $total 1)) "true" "false") }}
+  {{- $tmpl = printf `%s
+%s` $tmpl $p }}
+{{- end }}
+{{- $tmpl }}

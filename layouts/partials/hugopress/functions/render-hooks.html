@@ -2,16 +2,21 @@
 {{- $page := .Page }}
 {{- $modules := partialCached "hugopress/functions/modules" $name $name }}
 {{- $total := len $modules }}
+{{- $ctx := $page }}
 {{- range $modules }}
-  {{- $ctx := dict
-    "Page" $page
-    "Total" $total
-    "HasPrev" ._hasPrev
-    "HasNext" ._hasNext
-    "Index" ._index
-  }}
   {{- if site.Params.hugopress.debug }}
     {{- warnf "[hugopress] [%s] rendering hook: %q." .module .name }}
+  {{- end }}
+  {{- if .direct }}
+    {{- $ctx = $page }}
+  {{- else }}
+    {{- $ctx = dict
+      "Page" $page
+      "Total" $total
+      "HasPrev" ._hasPrev
+      "HasNext" ._hasNext
+      "Index" ._index
+    }}
   {{- end }}
   {{- if .cacheable }}
     {{- if ne .cache_key nil }}

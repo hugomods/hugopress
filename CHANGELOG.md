@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.1](https://github.com/hugomods/hugopress/compare/v0.4.0...v0.4.1) (2024-06-14)
+
+
+### Performance Improvements ⚡️
+
+* allow specifying a `partial` to directly include the desired template, using the current page as the context ([#60](https://github.com/hugomods/hugopress/issues/60)) ([4ea2769](https://github.com/hugomods/hugopress/commit/4ea27690b5dc7c891fdf8ea4deafe78ade97b070))
+* avoid using merge function to generate context for hooks ([8541aa8](https://github.com/hugomods/hugopress/commit/8541aa880c50402489aa017fd79328714c8847d2))
+* calculate Index, HasPrev, HasNext for hooks in advance ([#58](https://github.com/hugomods/hugopress/issues/58)) ([8541aa8](https://github.com/hugomods/hugopress/commit/8541aa880c50402489aa017fd79328714c8847d2))
+
 ## [0.4.0](https://github.com/hugomods/hugopress/compare/v0.3.0...v0.4.0) (2024-06-01)
 
 

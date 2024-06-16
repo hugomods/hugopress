@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/hugomods/hugopress/compare/v0.4.1...v0.5.0) (2024-06-16)
+
+
+### Features ✨
+
+* allow using page store key as cache key by setting `cache_store_key` for hooks ([eac2547](https://github.com/hugomods/hugopress/commit/eac25471bb6bb7a1bbcf041961e17875f8566ba9))
+
 ## [0.4.1](https://github.com/hugomods/hugopress/compare/v0.4.0...v0.4.1) (2024-06-14)
 
 

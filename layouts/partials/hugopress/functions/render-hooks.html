@@ -25,6 +25,8 @@
       {{- partialCached .partial $ctx (index $page.Params .cache_param_key) }}
     {{- else if ne .cache_site_param_key nil }}
       {{- partialCached .partial $ctx (index site.Params .cache_site_param_key) }}
+    {{- else if ne .cache_store_key nil }}
+      {{- partialCached .partial $ctx ($page.Store.Get .cache_store_key) }}
     {{- else }}
       {{- partialCached .partial $ctx }}
     {{- end }}

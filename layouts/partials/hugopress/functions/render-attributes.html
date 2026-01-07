@@ -16,15 +16,15 @@
   {{- range $name, $value := $attrs }}
     {{- if not ($attributes.Get $name) }}
       {{/* set name value directly if not exists. */}}
-      {{- $attributes.Set $name $value }}
-    {{- else }}
+      {{- $attributes.Set $name (slice $value) }}
+    {{- else if not (in ($attributes.Get $name) $value) }}
       {{/* append the new value for the corresponding name. */}}
-      {{- printf " %s" $value | $attributes.Add $name }}
+      {{- $attributes.Add $name (slice $value) }}
     {{- end }}
   {{- end }}
 {{- end }}
 {{- $tmp := slice }}
 {{- range $name, $value := $attributes.Values }}
-  {{- $tmp = $tmp | append (printf `%s="%s"` $name $value) }}
+  {{- $tmp = $tmp | append (printf `%s="%s"` $name (delimit $value " ")) }}
 {{- end }}
 {{- delimit $tmp " " | safeHTML -}}

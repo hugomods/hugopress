@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.2](https://github.com/hugomods/hugopress/compare/v0.5.1...v0.5.2) (2026-01-07)
+
+
+### Bug Fixes 🐞
+
+* do not print multiple attributes on the &lt;html&gt; tag ([3188c32](https://github.com/hugomods/hugopress/commit/3188c32742ad01aa705339ac7d33542f7a8528c7))
+
 ## [0.5.1](https://github.com/hugomods/hugopress/compare/v0.5.0...v0.5.1) (2026-01-07)
 
 

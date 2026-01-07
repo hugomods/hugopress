@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/hugomods/hugopress/compare/v0.5.0...v0.5.1) (2026-01-07)
+
+
+### Bug Fixes 🐞
+
+* avoid printing duplicate attributes ([#80](https://github.com/hugomods/hugopress/issues/80)) ([2aa6f48](https://github.com/hugomods/hugopress/commit/2aa6f48e483f51c0dff4545dcdce8a8b4c8a12b5))
+
 ## [0.5.0](https://github.com/hugomods/hugopress/compare/v0.4.1...v0.5.0) (2024-06-16)
 
 

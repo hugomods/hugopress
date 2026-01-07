@@ -1,5 +1,6 @@
 {{- $name := .Name }}
 {{- $page := .Page }}
+{{- $unique := .Unique | default false }}
 {{- $modules := partialCached "hugopress/functions/attributes" $name $name }}
 {{- $attributes := newScratch }}
 {{- range $modules }}
@@ -17,7 +18,7 @@
     {{- if not ($attributes.Get $name) }}
       {{/* set name value directly if not exists. */}}
       {{- $attributes.Set $name (slice $value) }}
-    {{- else if not (in ($attributes.Get $name) $value) }}
+    {{- else if and (not $unique) (not (in ($attributes.Get $name) $value)) }}
       {{/* append the new value for the corresponding name. */}}
       {{- $attributes.Add $name (slice $value) }}
     {{- end }}
